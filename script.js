@@ -20,6 +20,7 @@ let LIKE_NUMBERS = [
 ];
 
 let currentIndex = 0;
+const myBanner=document.getElementById('my-banner')
 const imageTitles=document.getElementById('kitty-title')
 const likeNumbers=document.getElementById('like-number')
 
@@ -28,7 +29,8 @@ function onNextButtonClicked() {
   // If we are still not hitting the end of the list yet, increase the index.
   if (currentIndex < IMAGES.length - 1) {
     // TODO: Increases the currentIndex by 1.
-
+    currentIndex++;
+    document.getElementById("my-banner").src = IMAGES[currentIndex];
     // Update the kitty image with the new index.
     updateKittyInfo(currentIndex);
   }
@@ -39,7 +41,8 @@ function onPreviousButtonClicked() {
   // If we are still not hitting the beginning of the list yet, decrease the index.
   if (currentIndex > 0) {
     // TODO: Decreases the currentIndex by 1.
-
+    currentIndex--;
+    document.getElementById("my-banner").src = IMAGES[currentIndex];
     // Update the kitty image with the new index.
     updateKittyInfo(currentIndex);
   }
@@ -51,7 +54,7 @@ function onPreviousButtonClicked() {
 function updateKittyInfo(index) {
   // TODO: Update the image with the ID "my-banner" with the new image. Hint: Use document.getElementById() to 
   // get the element with the ID "my-banner" and use `src` property to update the `src` of the image.
-
+  document.getElementById("my-banner").src = IMAGES[currentIndex];
 
   // TODO: Update the Title of the image here. Hint: Use `innerHTML` property instead of `src`.
 
